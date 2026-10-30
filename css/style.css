@@ -1,0 +1,40 @@
+html, body { margin: 0; height: 100%; overflow: hidden; background: #120b07; font-family: system-ui, sans-serif; }
+#app canvas { display: block; touch-action: none; }
+#vr {
+  position: fixed; right: 18px; bottom: 18px;
+  padding: 12px 24px; font-size: 17px; font-weight: 700;
+  color: #2a1a10; background: #f0c27a; border: 0; border-radius: 12px; cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+#vr:disabled { background: #4a3020; color: #e8d6bc; cursor: default; }
+#hud {
+  display: none; position: fixed; left: 16px; top: 14px; max-width: min(620px, calc(100vw - 32px));
+  color: #fbf1e1; font: 16px/1.5 system-ui, sans-serif; pointer-events: none;
+  background: rgba(30,18,10,0.82); padding: 8px 14px; border-radius: 10px; border: 1px solid #80532f;
+}
+#hud b { color: #f0c27a; }
+#hud em { color: #ffe3a0; font-style: normal; font-size: 15px; }
+#preview {
+  display: none; position: fixed; left: 50%; bottom: 64px; transform: translateX(-50%);
+  width: min(460px, calc(100vw - 32px)); pointer-events: none; text-align: center;
+  background: rgba(30,18,10,0.86); border: 1px solid #80532f; border-radius: 10px; padding: 8px 12px 6px;
+  color: #fbf1e1; font: 14px/1.4 system-ui, sans-serif;
+}
+#preview .bar { position: relative; height: 12px; border-radius: 6px; background: #3a2414; overflow: hidden; margin-bottom: 4px; }
+#preview .now { position: absolute; left: 0; top: 0; bottom: 0; background: rgba(240,194,122,0.45); }
+#preview .next { position: absolute; left: 0; top: 0; height: 4px; bottom: 0; margin-top: 8px; background: #7dff9a; }
+#preview .next.warn { background: #ffc04a; }
+#preview .next.over { background: #ff4a3a; }
+#preview .limit { position: absolute; right: 0; top: 0; bottom: 0; width: 3px; background: #ff4a3a; }
+#preview .txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#hint {
+  position: fixed; left: 16px; bottom: 18px; right: 300px; color: #fbf1e1; font: 14px/1.5 system-ui, sans-serif;
+  pointer-events: none;
+}
+#hint span { display: inline-block; background: rgba(30,18,10,0.78); padding: 6px 10px; border-radius: 8px; }
+#hint:empty { display: none; }
+#fps {
+  display: none; position: fixed; right: 16px; bottom: 76px; color: #ffdf6e; font: bold 15px monospace;
+  background: rgba(0,0,0,0.6); padding: 4px 8px; border-radius: 6px; pointer-events: none;
+}
+@media (max-width: 640px) { #hint { right: 16px; bottom: 120px; } #preview { bottom: 160px; } }
